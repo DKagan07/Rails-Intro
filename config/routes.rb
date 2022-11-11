@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   # get "/articles", to: "articles#index"
   # get "/articles/:id", to: "articles#show"
   
-  resources :articles
+  #this creates comments as a nested resource -- part of creating the hierarchical relationship between the two
+  resources :articles do
+    resources :comments
+  end
 
   # Defines the root path route ("/")
   # root "articles#index"
